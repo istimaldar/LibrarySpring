@@ -9,9 +9,9 @@ import java.util.List;
  * Created by istimaldar
  */
 public interface CustomerDAO {
-    int createCustomer(Customer customer) throws SQLException;
+    void createCustomer(Customer customer) throws SQLException;
     Customer readCustomerById(int id);
-    boolean updateCustomer(Customer customer);
+    void updateCustomer(Customer customer);
     void deleteCustomerById(int id);
     List<Customer> getAll();
 }

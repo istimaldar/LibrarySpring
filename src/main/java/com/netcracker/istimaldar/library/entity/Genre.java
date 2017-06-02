@@ -1,4 +1,4 @@
-package com.netcracker.istimaldar.entity;
+package com.netcracker.istimaldar.library.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,14 +10,14 @@ import java.io.Serializable;
  */
 
 @Entity
-@Table(name = "library.genre")
+@Table(name = "genre")
 public class Genre implements Cloneable, Serializable {
     @Id
     private int id;
     private String genre;
     private String description;
 
-    private Genre() {
+    public Genre() {
 
     }
 

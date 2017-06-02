@@ -1,4 +1,4 @@
-package com.netcracker.istimaldar.entity;
+package com.netcracker.istimaldar.library.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 
 @Entity
-@Table(name = "library.user")
+@Table(name = "user")
 public class User implements Cloneable, Serializable {
     @Id
     private int id;
@@ -18,7 +18,7 @@ public class User implements Cloneable, Serializable {
     private String hpassword;
     private String email;
 
-    private User() {
+    public User() {
 
     }
 

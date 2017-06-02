@@ -9,9 +9,9 @@ import java.util.List;
  * Created by istimaldar
  */
 public interface BookDAO {
-    int createBook(Book book) throws SQLException;
+    void createBook(Book book) throws SQLException;
     Book readBookById(int id);
-    boolean updateBook(Book book);
+    void updateBook(Book book);
     void deleteBookById(int id);
     List<Book> getAll();
 }

@@ -1,4 +1,4 @@
-package com.netcracker.istimaldar.entity;
+package com.netcracker.istimaldar.library.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -8,7 +8,7 @@ import java.util.List;
  * Created by istimaldar
  */
 @Entity
-@Table(name = "library.customer")
+@Table(name = "customer")
 public class Customer implements Cloneable, Serializable {
     @Id
     private int id;
@@ -25,7 +25,7 @@ public class Customer implements Cloneable, Serializable {
             inverseJoinColumns = { @JoinColumn(name = "genre_id")})
     private List<Order> orders;
 
-    private Customer() {
+    public Customer() {
 
     }
 

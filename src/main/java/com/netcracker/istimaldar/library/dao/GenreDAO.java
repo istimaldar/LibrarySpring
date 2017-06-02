@@ -9,9 +9,9 @@ import java.util.List;
  * Created by istimaldar
  */
 public interface GenreDAO {
-    int createGenre(Genre genre) throws SQLException;
+    void createGenre(Genre genre) throws SQLException;
     Genre readGenreById(int id);
-    boolean updateGenre(Genre genre);
+    void updateGenre(Genre genre);
     void deleteGenreById(int id);
     List<Genre> getAll();
 }

@@ -9,9 +9,9 @@ import java.util.List;
  * Created by istimaldar
  */
 public interface OrderDAO {
-    int createOrder(Order order) throws SQLException;
+    void createOrder(Order order) throws SQLException;
     Order readOrderById(int id);
-    boolean updateOrder(Order order);
+    void updateOrder(Order order);
     void deleteOrderById(int id);
     List<Order> getAll();
 }

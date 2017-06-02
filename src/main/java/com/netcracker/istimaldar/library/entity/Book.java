@@ -1,6 +1,4 @@
-package com.netcracker.istimaldar.entity;
-
-import com.netcracker.istimaldar.entity.Author;
+package com.netcracker.istimaldar.library.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,7 +9,7 @@ import java.util.List;
  */
 
 @Entity
-@Table(name = "library.book")
+@Table(name = "book")
 public class Book implements Cloneable, Serializable {
     @Id
     private int id;
@@ -25,7 +23,7 @@ public class Book implements Cloneable, Serializable {
             inverseJoinColumns = { @JoinColumn(name = "genre_id")})
     private List<Genre> genres;
 
-    private Book() {
+    public Book() {
 
     }
 

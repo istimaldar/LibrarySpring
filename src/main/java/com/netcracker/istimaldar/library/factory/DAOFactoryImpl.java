@@ -1,14 +1,15 @@
-package com.netcracker.istimaldar.dao.factory;
+package com.netcracker.istimaldar.library.factory;
 
-import com.netcracker.istimaldar.dao.daointerface.*;
-import com.netcracker.istimaldar.dao.impl.mysql.*;
+
+import com.netcracker.istimaldar.library.dao.*;
+import com.netcracker.istimaldar.library.impl.*;
 
 /**
  * Created by istimaldar
  */
-public class MySqlDAOFactory implements DAOFactory {
+public class DAOFactoryImpl implements DAOFactory {
     private static class MySqlDAOFactorySingletonHolder {
-        static final MySqlDAOFactory INSTANCE = new MySqlDAOFactory();
+        static final DAOFactoryImpl INSTANCE = new DAOFactoryImpl();
     }
 
     @Override

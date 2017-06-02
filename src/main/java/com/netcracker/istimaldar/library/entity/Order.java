@@ -1,4 +1,4 @@
-package com.netcracker.istimaldar.entity;
+package com.netcracker.istimaldar.library.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +12,7 @@ import java.util.Date;
  */
 
 @Entity
-@Table(name = "library.order")
+@Table(name = "book_order")
 public class Order implements Cloneable, Serializable {
     @Id
     private int id;
@@ -23,12 +23,11 @@ public class Order implements Cloneable, Serializable {
 
     @Column(name = "close_date")
     private Date closeDate;
-    private Book book;
 
     @Column(name = "customer_id")
     private int customerID;
 
-    private Order() {
+    public Order() {
 
     }
 
@@ -56,10 +55,6 @@ public class Order implements Cloneable, Serializable {
         return closeDate;
     }
 
-    public Book getBook() {
-        return book;
-    }
-
     public int getCustomerID() {
         return customerID;
     }
@@ -73,7 +68,7 @@ public class Order implements Cloneable, Serializable {
 
         return id == order.id && subscription == order.subscription && closed == order.closed
                 && customerID == order.customerID && beginning.equals(order.beginning)
-                && ending.equals(order.ending) && closeDate.equals(order.closeDate) && book.equals(order.book);
+                && ending.equals(order.ending) && closeDate.equals(order.closeDate);
     }
 
     @Override
@@ -83,7 +78,6 @@ public class Order implements Cloneable, Serializable {
         result = 31 * result + ending.hashCode();
         result = 31 * result + (closed ? 1 : 0);
         result = 31 * result + closeDate.hashCode();
-        result = 31 * result + book.hashCode();
         result = 31 * result + customerID;
         return result;
     }
@@ -97,7 +91,6 @@ public class Order implements Cloneable, Serializable {
                 ", ending=" + ending +
                 ", closed=" + closed +
                 ", closeDate=" + closeDate +
-                ", book=" + book +
                 ", customerID=" + customerID +
                 '}';
     }
@@ -138,11 +131,6 @@ public class Order implements Cloneable, Serializable {
 
         public OrderBuilder setCloseDate(Date closeDate) {
             Order.this.closeDate = closeDate;
-            return this;
-        }
-
-        public OrderBuilder setBook(Book book) {
-            Order.this.book = book;
             return this;
         }
 
