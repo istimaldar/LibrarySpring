@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 
 @Entity
-@Table(name = "user")
+@Table(name = "userl")
 public class User implements Cloneable, Serializable {
     @Id
     private int id;
